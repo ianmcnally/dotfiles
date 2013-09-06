@@ -43,14 +43,13 @@ alias gd="git diff"
 alias gs="git status"
 alias gl="git log"
 alias gc="git commit"
-alias jpm="nocorrect jpm "
+alias gf="git fetch"
+git_branch="`git symbolic-ref HEAD --short`"
+alias gp="git push origin $git_branch"
+alias gpr="git pull --rebase"
+alias gpp="gpr; gp"
+alias gl="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --decorate --graph"
 
 export EDITOR='subl -w'
 
-export ASSESS_HOME="$HOME/work/web-assessment"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export M2_HOME=/usr/share/maven
-export PATH=$M2_HOME:$JAVA_HOME/bin:$PATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
