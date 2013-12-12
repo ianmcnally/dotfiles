@@ -14,3 +14,7 @@ bind down:ctrl,alt,cmd,shift resize +0 +10%
 bind left:ctrl,alt,cmd push left bar-resize:screenSizeX/2
 bind right:ctrl,alt,cmd push right bar-resize:screenSizeX/2
 bind up:ctrl,alt,cmd push up bar-resize:screenSizeY
+
+# Utilities
+#undo
+bind u:ctrl,alt,cmd undo
