@@ -1,20 +1,21 @@
 # Moving
-bind left:ctrl,cmd,shift nudge -2% +0
-bind right:ctrl,cmd,shift nudge +2% +0
-bind up:ctrl,cmd,shift nudge +0 -2%
-bind down:ctrl,cmd,shift nudge +0 +2%
+bind left:ctrl,cmd,shift nudge -5% +0
+bind right:ctrl,cmd,shift nudge +5% +0
+bind up:ctrl,cmd,shift nudge +0 -5%
+bind down:ctrl,cmd,shift nudge +0 +5%
 
 # Resizing
-bind left:ctrl,alt,cmd,shift resize -10% +0
-bind right:ctrl,alt,cmd,shift resize +10% +0
-bind up:ctrl,alt,cmd,shift resize +0 -10%
-bind down:ctrl,alt,cmd,shift resize +0 +10%
+bind left:ctrl,alt,cmd,shift resize -5% +0
+bind right:ctrl,alt,cmd,shift resize +5% +0
+bind up:ctrl,alt,cmd,shift resize +0 -5%
+bind down:ctrl,alt,cmd,shift resize +0 +5%
 
 # Sizes
 bind left:ctrl,alt,cmd push left bar-resize:screenSizeX/2
 bind right:ctrl,alt,cmd push right bar-resize:screenSizeX/2
 bind up:ctrl,alt,cmd push up bar-resize:screenSizeY
+bind c:ctrl,alt,cmd move screenSizeX*0.02;screenSizeY*0.04 screenSizeX*0.95;screenSizeY*0.97
 
 # Utilities
-#undo
+# - undo
 bind u:ctrl,alt,cmd undo
