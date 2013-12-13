@@ -3,6 +3,8 @@ bind left:ctrl,cmd,shift nudge -5% +0
 bind right:ctrl,cmd,shift nudge +5% +0
 bind up:ctrl,cmd,shift nudge +0 -5%
 bind down:ctrl,cmd,shift nudge +0 +5%
+bind 1:ctrl,cmd,shift throw 0 resize
+bind 2:ctrl,cmd,shift throw 1 resize
 
 # Resizing
 bind left:ctrl,alt,cmd,shift resize -5% +0
