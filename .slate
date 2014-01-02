@@ -20,7 +20,7 @@ bind down:ctrl,alt,cmd,shift resize +0 +5%
 bind left:ctrl,alt,cmd push left bar-resize:screenSizeX/2
 bind right:ctrl,alt,cmd push right bar-resize:screenSizeX/2
 bind up:ctrl,alt,cmd push up bar-resize:screenSizeY
-bind c:ctrl,alt,cmd move screenSizeX*0.02;screenSizeY*0.04 screenSizeX*0.95;screenSizeY*0.97
+bind c:ctrl,alt,cmd move screenSizeX*0.02;screenSizeY*0.04 screenSizeX*0.95;screenSizeY*0.95
 
 # Utilities
 # - undo
