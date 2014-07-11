@@ -1,16 +1,18 @@
 {
-	"coffee_path": "/usr/local/bin/coffee",
+	"coffee_path": "/usr/local/bin",
 	"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
 	"flatland_square_tabs": true,
-	"font_size": 14,
+	"font_face": "Monaco",
+	"font_size": 16,
 	"ignored_packages":
 	[
+		"Stylus",
 		"Vintage"
 	],
 	"save_on_focus_lost": true,
 	"show_full_path": true,
 	"tab_size": 2,
+	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"theme": "Flatland Dark.sublime-theme"
+	"trim_trailing_white_space_on_save": true
 }
