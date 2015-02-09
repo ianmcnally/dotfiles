@@ -54,27 +54,3 @@ alias killr="kill -9 `ps ux | grep -v grep | grep rails | awk '{print $2}'`"
 export EDITOR='subl -w'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# Work
-export ANDROID_HOME=/usr/local/android-sdk-macosx
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
-export PLAY_HOME=/usr/local/play-2.1.1
-export PATH=$PLAY_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH
-if [ -f ~/.rvm/scripts/rvm ]
-then
-    . ~/.rvm/scripts/rvm
-fi
-
-function setjdk() {
-  if [ $# -ne 0 ]; then
-   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-   if [ -n "${JAVA_HOME+x}" ]; then
-    removeFromPath $JAVA_HOME
-   fi
-   export JAVA_HOME=`/usr/libexec/java_home -v $@`
-   export PATH=$JAVA_HOME/bin:$PATH
-  fi
- }
- function removeFromPath() {
-  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
- }
