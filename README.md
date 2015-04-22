@@ -1,1 +1,1 @@
-Dotfiles! Though not that many, cos I'm not a dot man, really.
+Dotfiles, editor settings, etc.
