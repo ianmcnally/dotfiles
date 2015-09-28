@@ -73,6 +73,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Get them fonts
+set gfn=Source\ Code\ Pro:h15,Menlo:h15
+
 " Add a bit extra margin to the left
 set foldcolumn=1
 
@@ -267,9 +270,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|PhantomJS'
 " Enable all functions in all modes
 let g:user_zen_mode='a'
 
-set autochdir
-let NERDTreeChDirMode=2
-nnoremap <leader>n :NERDTree .<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
