@@ -1,3 +1,9 @@
+" Reload pathogen
+set nocompatible
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
 " Sets line numbers
 set number
 
@@ -79,12 +85,6 @@ set gfn=Source\ Code\ Pro:h15,Menlo:h15
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" Reload pathogen
-set nocompatible
-call pathogen#infect()
-syntax on
-filetype plugin indent on
-
 " Enable syntax highlighting
 syntax enable 
 
@@ -128,7 +128,6 @@ set tabstop=2
 " Expand %% to cwd. Helpful when :e
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-
 " Linebreak on 500 characters
 set lbr
 set tw=500
@@ -137,23 +136,10 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
-
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -170,13 +156,11 @@ map <C-l> <C-W>l
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-
 " Always show the status line
 set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
@@ -194,7 +178,6 @@ func! DeleteTrailingWS()
 endfunc
 " Delete trailing white space on save, except .md
 autocmd BufWrite *.*!md :call DeleteTrailingWS()
-
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -250,7 +233,6 @@ try
 catch
 endtry
 
-
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
@@ -262,7 +244,6 @@ map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|PhantomJS'
-
 
 """"""""""""""""""""""""""""""
 " => ZenCoding
