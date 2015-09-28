@@ -12,7 +12,7 @@ nmap <leader>; A;<Esc>
 " Yank, Delete, Put uses clipboard register
 nnoremap y "*y
 nnoremap p "*p
-nnoremap d "*p
+nnoremap d "*d
 
 " Enable filetype plugins
 filetype plugin on
@@ -76,6 +76,11 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Reload pathogen
+set nocompatible
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 " Enable syntax highlighting
 syntax enable 
@@ -262,7 +267,9 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|PhantomJS'
 " Enable all functions in all modes
 let g:user_zen_mode='a'
 
-
+set autochdir
+let NERDTreeChDirMode=2
+nnoremap <leader>n :NERDTree .<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
