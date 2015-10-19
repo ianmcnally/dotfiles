@@ -13,7 +13,7 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-nmap <leader>; A;<Esc>
+nnoremap <leader>; A;<Esc>
 
 " Yank, Delete, Put uses clipboard register
 nnoremap y "*y
@@ -23,6 +23,9 @@ nnoremap d "*d
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+
+" Save on focus lost
+:au FocusLost * :wa
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -135,6 +138,9 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+" File extension handlers
+au BufNewFile,BufRead *.es6 set ft=javascript
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
@@ -256,3 +262,6 @@ let g:user_zen_mode='a'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
 map <leader>nn :NERDTreeToggle<cr>
+
+" Path setup
+set runtimepath^=~/.vim/bundle/ag
