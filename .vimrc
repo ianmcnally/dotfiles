@@ -13,6 +13,12 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = " "
+let g:mapleader = " "
+
+" leader ; adds a semi-colon to the end of a line
 nnoremap <leader>; A;<Esc>
 
 " Yank, Delete, Put uses clipboard register
@@ -29,11 +35,6 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = " "
-let g:mapleader = " "
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -64,6 +65,9 @@ set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch 
+
+" leader s starts a substitution
+nmap <leader>s :%s/
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
