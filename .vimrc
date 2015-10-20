@@ -33,6 +33,9 @@ filetype indent on
 " Save on focus lost
 :au FocusLost * :wa
 
+" Trim whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
