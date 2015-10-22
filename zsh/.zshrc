@@ -51,7 +51,7 @@ alias gpf="git push --force-with-lease"
 alias gpr="git pull --rebase"
 alias gpp="gpr; gp"
 alias gl="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --decorate --graph"
-alias killr="kill -9 `ps ux | grep -v grep | grep rails | awk '{print $2}'`"
+alias mvim="open -a MacVim.app $1"
 
 export EDITOR='subl -w'
 
