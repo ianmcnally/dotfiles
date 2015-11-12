@@ -105,6 +105,8 @@ endtry
 
 set background=dark
 
+" Set line number color
+highlight LineNr guifg=#666666
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -257,12 +259,6 @@ map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|PhantomJS'
-
-""""""""""""""""""""""""""""""
-" => ZenCoding
-""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
