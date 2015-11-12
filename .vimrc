@@ -60,26 +60,26 @@ if has('mouse')
   set mouse=a
 endif
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " leader s starts a substitution
 nmap <leader>s :%s/
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -96,7 +96,7 @@ set gfn=Source\ Code\ Pro:h15,Menlo:h15
 set foldcolumn=1
 
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 try
     colorscheme desert
@@ -224,7 +224,7 @@ function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
@@ -237,7 +237,7 @@ let g:colors_name="desert"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Turn persistent undo on 
+" => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
@@ -272,3 +272,9 @@ map <leader>nn :NERDTreeToggle<cr>
 
 " Path setup
 set runtimepath^=~/.vim/bundle/ag
+
+"""
+" => Emmet
+"""
+map <leader>e <C-Y>,
+
