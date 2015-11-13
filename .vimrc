@@ -76,6 +76,9 @@ set incsearch
 " leader s starts a substitution
 nmap <leader>s :%s/
 
+" leader cs clears search highlight
+map <leader>cs :noh<cr>
+
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
@@ -272,3 +275,5 @@ set runtimepath^=~/.vim/bundle/ag
 """
 map <leader>e <C-Y>,
 
+" Ag
+map <leader>f :Ag
