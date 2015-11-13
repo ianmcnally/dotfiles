@@ -13,6 +13,10 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
+" ctrl a, e go to beginning, end of line
+map <C-a> 0
+map <C-e> $
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = " "
@@ -155,12 +159,6 @@ au BufNewFile,BufRead *.es6 set ft=javascript
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 
 " Smart way to move between windows
 map <C-j> <C-W>j
