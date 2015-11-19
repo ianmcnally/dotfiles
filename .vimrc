@@ -254,8 +254,11 @@ endtry
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
+" show hidden files
+let g:ctrlp_show_hidden = 1
+
 let g:ctrlp_map = '<c-f>'
-map <leader>j :CtrlP<cr>
+map <leader>f :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
@@ -265,7 +268,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|PhantomJS'
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
-map <leader>nn :NERDTreeToggle<cr>
+map \ :NERDTreeToggle<cr>
 
 " Path setup
 set runtimepath^=~/.vim/bundle/ag
@@ -276,4 +279,25 @@ set runtimepath^=~/.vim/bundle/ag
 map <leader>e <C-Y>,
 
 " Ag
-map <leader>f :Ag
+map <leader>ff :Ag<space>
+
+"""
+" => Syntastic
+"""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
+"""
+" => NERDCommenter
+"""
+map <leader>/ <leader>c<space>
+
+" Dan's stuff
+nnoremap <silent> <leader>F :CtrlPClearAllCaches<cr>:CtrlPCurWD<cr>
