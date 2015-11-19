@@ -17,6 +17,10 @@ nnoremap gj j
 map <C-a> 0
 map <C-e> $
 
+" <leader>- jumps to last edit, <leader>_ jumps forward an edit. like sublime.
+map <leader>- g;
+map <leader>_ g,
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = " "
@@ -258,7 +262,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_show_hidden = 1
 
 let g:ctrlp_map = '<c-f>'
-map <leader>f :CtrlP<cr>
+map <leader>p :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
@@ -301,3 +305,4 @@ map <leader>/ <leader>c<space>
 
 " Dan's stuff
 nnoremap <silent> <leader>F :CtrlPClearAllCaches<cr>:CtrlPCurWD<cr>
+map <leader>f :CtrlP<cr>
