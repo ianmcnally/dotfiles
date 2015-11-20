@@ -18,8 +18,8 @@ map <C-a> 0
 map <C-e> $
 
 " <leader>- jumps to last edit, <leader>_ jumps forward an edit. like sublime.
-map <leader>- g;
-map <leader>_ g,
+nnoremap <leader>- g;
+nnoremap <leader>_ g,
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -40,6 +40,10 @@ filetype indent on
 
 " Save on focus lost
 :au FocusLost * :wa
+
+" Tab indent left, right is <leader>[ or ]
+map <leader>[ <<
+map <leader>] >>
 
 " Trim whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -81,7 +85,7 @@ set incsearch
 nmap <leader>s :%s/
 
 " leader cs clears search highlight
-map <leader>cs :noh<cr>
+nnoremap <leader>cs :noh<cr>
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
