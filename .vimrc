@@ -114,14 +114,14 @@ set foldcolumn=1
 syntax enable
 
 try
-    colorscheme desert
+    colorscheme solarized
 catch
 endtry
 
 set background=dark
 
 " Set line number color
-highlight LineNr guifg=#666666
+"highlight LineNr guifg=#666666
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -301,6 +301,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
+
+"""
+" => Airline
+"""
+let g:airline_theme = "solarized"
 
 """
 " => NERDCommenter
