@@ -30,9 +30,9 @@ let g:mapleader = " "
 map <leader>; A;<Esc>
 
 " Yank, Delete, Put uses clipboard register
-map y "*y
-map p "*p
-map d "*d
+nnoremap y "*y
+nnoremap p "*p
+nnoremap d "*d
 
 " Enable filetype plugins
 filetype plugin on
