@@ -18,8 +18,8 @@ map <C-a> 0
 map <C-e> $
 
 " <leader>- jumps to last edit, <leader>_ jumps forward an edit. like sublime.
-nnoremap <leader>- g;
-nnoremap <leader>_ g,
+map <leader>- g;
+map <leader>_ g,
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -27,12 +27,12 @@ let mapleader = " "
 let g:mapleader = " "
 
 " leader ; adds a semi-colon to the end of a line
-nnoremap <leader>; A;<Esc>
+map <leader>; A;<Esc>
 
 " Yank, Delete, Put uses clipboard register
-nnoremap y "*y
-nnoremap p "*p
-nnoremap d "*d
+map y "*y
+map p "*p
+map d "*d
 
 " Enable filetype plugins
 filetype plugin on
@@ -85,7 +85,7 @@ set incsearch
 nmap <leader>s :%s/
 
 " leader cs clears search highlight
-nnoremap <leader>cs :noh<cr>
+map <leader>cs :noh<cr>
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -267,7 +267,7 @@ let g:ctrlp_show_hidden = 1
 
 let g:ctrlp_map = '<c-f>'
 map <leader>p :CtrlP<cr>
-map <c-b> :CtrlPBuffer<cr>
+map <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
@@ -277,6 +277,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
 map \ :NERDTreeToggle<cr>
+map <leader>r :NERDTreeFind
 
 " Path setup
 set runtimepath^=~/.vim/bundle/ag
@@ -312,6 +313,7 @@ let g:airline_theme = "solarized"
 """
 map <leader>/ <leader>c<space>
 
-" Dan's stuff
+" CLIENT SETTINGS
 nnoremap <silent> <leader>F :CtrlPClearAllCaches<cr>:CtrlPCurWD<cr>
 map <leader>f :CtrlP<cr>
+set noexpandtab
