@@ -13,6 +13,10 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
+" Visual change indent re-selects visual box
+vnoremap < <gv
+vnoremap > >gv
+
 " ctrl a, e go to beginning, end of line
 map <C-a> 0
 map <C-e> $
@@ -28,11 +32,6 @@ let g:mapleader = " "
 
 " leader ; adds a semi-colon to the end of a line
 map <leader>; A;<Esc>
-
-" Yank, Delete, Put uses clipboard register
-nnoremap y "*y
-nnoremap p "*p
-nnoremap d "*d
 
 " Enable filetype plugins
 filetype plugin on
@@ -277,7 +276,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
 map \ :NERDTreeToggle<cr>
-map <leader>r :NERDTreeFind
+map <leader>r :NERDTreeFind<cr>
 
 " Path setup
 set runtimepath^=~/.vim/bundle/ag
