@@ -104,7 +104,7 @@ set t_vb=
 set tm=500
 
 " Get them fonts
-set gfn=Source\ Code\ Pro:h15,Menlo:h15
+set gfn=Menlo:h15
 
 " Add a bit extra margin to the left
 set foldcolumn=1
@@ -266,7 +266,8 @@ let g:ctrlp_show_hidden = 1
 
 let g:ctrlp_map = '<c-f>'
 map <leader>p :CtrlP<cr>
-map <leader>b :CtrlPBuffer<cr>
+"map <leader>P :CtrlPClearAllCaches<cr>:CtrlP<cr>
+map <leader>P :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
@@ -300,7 +301,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint', 'jscs']
 let g:syntastic_error_symbol='🙀'
 let g:syntastic_warning_symbol='👀'
 
@@ -310,11 +311,10 @@ let g:syntastic_warning_symbol='👀'
 let g:airline_theme = "solarized"
 
 """
-" => NERDCommenter
+" => vim-commentary for commenting
 """
-map <leader>/ <leader>c<space>
+map <leader>/ gc
 
 " CLIENT SETTINGS
 nnoremap <silent> <leader>F :CtrlPClearAllCaches<cr>:CtrlPCurWD<cr>
 map <leader>f :CtrlP<cr>
-set noexpandtab
