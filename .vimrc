@@ -313,7 +313,8 @@ let g:airline_theme = "solarized"
 """
 " => vim-commentary for commenting
 """
-map <leader>/ gc
+vmap <leader>/ gc
+nmap <leader>/ gcc
 
 " CLIENT SETTINGS
 nnoremap <silent> <leader>F :CtrlPClearAllCaches<cr>:CtrlPCurWD<cr>
