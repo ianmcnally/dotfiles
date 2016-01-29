@@ -286,6 +286,7 @@ set runtimepath^=~/.vim/bundle/ag
 " => Emmet
 """
 map <leader>e <C-Y>,
+imap <C-E> <C-Y>,
 
 " Ag
 map <leader>ff :Ag<space>
