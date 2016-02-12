@@ -21,9 +21,8 @@ vnoremap > >gv
 map <C-a> 0
 map <C-e> $
 
-" <leader>- jumps to last edit, <leader>_ jumps forward an edit. like sublime.
-map <leader>- g;
-map <leader>_ g,
+" <leader>b go to last buffer
+map <leader>b <C-^>
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -39,10 +38,6 @@ filetype indent on
 
 " Save on focus lost
 :au FocusLost * :wa
-
-" Tab indent left, right is <leader>[ or ]
-map <leader>[ <<
-map <leader>] >>
 
 " Trim whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -104,7 +99,8 @@ set t_vb=
 set tm=500
 
 " Get them fonts
-set gfn=Menlo:h15
+set gfn=Monaco:h15
+" set gfn=Menlo:h15
 
 " Add a bit extra margin to the left
 set foldcolumn=1
