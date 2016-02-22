@@ -290,22 +290,25 @@ map <leader>ff :Ag<space>
 """
 " => Syntastic
 """
+" prefer local eslint
+let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let b:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol='🙀'
 let g:syntastic_warning_symbol='👀'
 
 """
 " => Airline
 """
-let g:airline_theme = "solarized"
+let g:airline_theme = 'solarized'
 
 """
 " => vim-commentary for commenting
