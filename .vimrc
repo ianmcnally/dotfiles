@@ -99,7 +99,7 @@ set t_vb=
 set tm=500
 
 " Get them fonts
-set gfn=Monaco:h15
+set gfn=Operator\ Mono\ SSm\ Book:h14
 " set gfn=Menlo:h15
 
 " Add a bit extra margin to the left
