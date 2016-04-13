@@ -1,9 +1,14 @@
 {
-	"in_process_packages": [],
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"All Autocomplete",
 		"AngularJS",
+		"Babel",
+		"Babel Snippets",
 		"Better CoffeeScript",
 		"BracketHighlighter",
 		"ChangeQuotes",
@@ -13,18 +18,32 @@
 		"EasyMotion",
 		"EditorConfig",
 		"Emmet",
+		"FuzzyFilePath",
 		"Git",
 		"GitGutter",
+		"HTML Mustache",
 		"HTMLBeautify",
+		"Jade",
 		"JavaScriptNext - ES6 Syntax",
 		"JSCS-Formatter",
 		"JSX",
+		"LESS",
 		"Markdown Preview",
+		"Oceanic Next Color Scheme",
 		"Package Control",
+		"Python 3",
 		"Sass",
 		"SideBarEnhancements",
+		"Solarized Color Scheme",
 		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
-		"Theme - Flatland"
+		"SublimeLinter-jsxhint",
+		"Sublimerge Pro",
+		"Swift",
+		"Theme - Flatland",
+		"Theme - Solarized Flat",
+		"Vintageous"
 	]
 }
