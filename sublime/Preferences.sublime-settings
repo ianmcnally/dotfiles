@@ -2,9 +2,14 @@
 	"auto_match_enabled": false,
 	"color_scheme": "Packages/Theme - Solarized Flat/Solarized Flat.tmTheme",
 	"font_face": "Operator Mono SSm",
-	"font_options": [ "gray_antialias" ],
+	"font_options":
+	[
+		"gray_antialias"
+	],
 	"font_size": 16,
-	"ignored_packages": [
+	"ignored_packages":
+	[
+		"AngularJS",
 		"ChangeQuotes",
 		"CSScomb",
 		"GitSavvy",
@@ -13,12 +18,14 @@
 		"JavaScript",
 		"JavaScriptNext - ES6 Syntax",
 		"Stylus",
-		"SublimeLinter",
 		"Sublimerge Pro",
 		"Syntax Highlighting for Sass",
-		"Vintage"
+		"Vintage",
+		"Vintage Surround",
+		"VintageES"
 	],
-	"rulers": [
+	"rulers":
+	[
 		120
 	],
 	"save_on_focus_lost": true,
@@ -26,5 +33,7 @@
 	"tab_size": 2,
 	"theme": "Solarized Flat.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"vintageous_use_ctrl_keys": true,
+	"vintageous_use_sys_clipboard": true
 }
