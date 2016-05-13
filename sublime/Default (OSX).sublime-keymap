@@ -1,25 +1,6 @@
 [
-  {"keys": ["super+;"], "command": "run_macro_file", "args": { "file": "Packages/User/semicolon-eol.sublime-macro"} },
-  {
-    "keys": ["super+'", "<character>"],
-    "command": "easy_motion",
-        "args": {"select_text": false}
-  },
-    {
-        "keys": ["super+'", "enter"],
-        "command": "easy_motion",
-        "args": {"select_text": false, "character": "enter"}
-    },
-    {
-        "keys": ["super+shift+'", "<character>"],
-        "command": "easy_motion",
-        "args": {"select_text": true}
-    },
-    {
-        "keys": ["super+shift+'", "enter"],
-        "command": "easy_motion",
-        "args": {"select_text": true, "character": "enter"}
-    },
+    {"keys": ["super+;"], "command": "run_macro_file", "args": { "file": "Packages/User/semicolon-eol.sublime-macro"} },
     { "keys": ["ctrl+h"], "command": "focus_neighboring_group", "args": {"forward": false} },
     { "keys": ["ctrl+l"], "command": "focus_neighboring_group" },
+    { "keys": ["super+shift+r"], "command": "reveal_in_side_bar"}
 ]
