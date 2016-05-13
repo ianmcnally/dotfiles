@@ -1,6 +1,6 @@
 [
-    {"keys": ["super+;"], "command": "run_macro_file", "args": { "file": "Packages/User/semicolon-eol.sublime-macro"} },
+    {"keys": ["super+;"], "command": "run_macro_file", "args": { "file": "res://Packages/User/semicolon-eol.sublime-macro"} },
     { "keys": ["ctrl+h"], "command": "focus_neighboring_group", "args": {"forward": false} },
     { "keys": ["ctrl+l"], "command": "focus_neighboring_group" },
-    { "keys": ["super+shift+r"], "command": "reveal_in_side_bar"}
+    { "keys": ["super+shift+r"], "command": "reveal_and_focus" }
 ]
