@@ -2,5 +2,17 @@
     {"keys": ["super+;"], "command": "run_macro_file", "args": { "file": "res://Packages/User/semicolon-eol.sublime-macro"} },
     { "keys": ["ctrl+h"], "command": "focus_neighboring_group", "args": {"forward": false} },
     { "keys": ["ctrl+l"], "command": "focus_neighboring_group" },
-    { "keys": ["super+shift+r"], "command": "reveal_and_focus" }
+    { "keys": ["super+shift+r"], "command": "reveal_and_focus" },
+    { "keys": ["h"], "command": "move", "args": {"by": "characters", "forward": false}, "context":
+        [ {"key": "control", "operand": "sidebar_tree"} ]
+    },
+    { "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true}, "context":
+        [ {"key": "control", "operand": "sidebar_tree"} ]
+    },
+    { "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false}, "context":
+        [ {"key": "control", "operand": "sidebar_tree"} ]
+    },
+    { "keys": ["l"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
+        [ {"key": "control", "operand": "sidebar_tree"} ]
+    }
 ]
