@@ -1,0 +1,46 @@
+colorscheme solarized
+set background=dark
+set gfn=Operator\ Mono\ SSm:h16
+
+" Directional keys operate on display lines
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
+" Visual change indent re-selects visual box
+vnoremap < <gv
+vnoremap > >gv
+
+" leader ; adds a semi-colon to the end of a line
+map <leader>; A;<Esc>
+
+" Trim whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Reload buffer on focus
+au FocusGained,BufEnter * :silent! !
+
+" Save buffer on focus lost
+au FocusLost,WinLeave * :silent! w
+
+" Move to next/previous tabs
+nnoremap [w :tabp<cr>
+nnoremap ]w :tabn<cr>
+
+" Move a line of text using Command+[jk] on mac
+nmap <D-j> mz:m+<cr>`z
+nmap <D-k> mz:m-2<cr>`z
+vmap <D-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+" Ctrl-P
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
+
+" Emmet
+map <leader>e <C-Y>,
+imap <C-E> <C-Y>,
+
