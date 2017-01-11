@@ -44,3 +44,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
 map <leader>e <C-Y>,
 imap <C-E> <C-Y>,
 
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
