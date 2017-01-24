@@ -1,12 +1,15 @@
 colorscheme solarized
 set background=dark
-set gfn=Operator\ Mono\ SSm:h16
+set gfn=Operator\ Mono\ SSm\ Book:h18
 
 " Directional keys operate on display lines
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+" Disable code folding
+set nofoldenable
 
 " Visual change indent re-selects visual box
 vnoremap < <gv
@@ -47,3 +50,7 @@ imap <C-E> <C-Y>,
 " vim-expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" YouCompleteMe
+" close preview window
+let g:ycm_autoclose_preview_window_after_completion = 1
