@@ -11,6 +11,11 @@ nnoremap gj j
 " Disable code folding
 set nofoldenable
 
+" Cursor line
+hi CursorLine gui=underline guibg='#002b36'
+hi CursorLineNR guifg='#586e75' gui=none
+set cursorline
+
 " Visual change indent re-selects visual box
 vnoremap < <gv
 vnoremap > >gv
