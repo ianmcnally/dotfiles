@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(coffeescript git rake heroku python node scala history-substring-search zsh-syntax-highlighting)
+plugins=(coffeescript git rake heroku python node scala history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,18 +41,17 @@ bindkey "^[^[[C" forward-word
 alias gd="git diff"
 alias gs="git status"
 alias gl="git log"
-alias gc="git commit"
+alias gc="git commit -v"
 alias gco="git checkout"
 alias gf="git fetch"
 alias grm="git fetch; git rebase origin/master"
 alias gri="git rebase -i"
 alias gp="git push"
-alias gpf="git push --force-with-lease"
+alias gpf="git push --force-with-lease --no-verify"
 alias gpr="git pull --rebase"
 alias gpp="gpr; gp"
 alias gl="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --decorate --graph"
-alias mvim="open -a MacVim.app $1"
-
-export EDITOR='subl -w'
+alias fux="yarn lint:fix"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+

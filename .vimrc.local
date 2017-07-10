@@ -1,6 +1,6 @@
 colorscheme solarized
 set background=dark
-set gfn=Operator\ Mono\ SSm\ Book:h18
+set gfn=Operator\ Mono\ SSm\ Book:h24
 
 " Directional keys operate on display lines
 nnoremap k gk
@@ -47,6 +47,15 @@ map 0 ^
 
 " Ctrl-P
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
+
+" NerdTree
+let g:NERDTreeIgnore = ['node_modules', 'dist', '.git']
+let g:NERDTreeShowHidden=1
+
+" Prettier
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#semi = 'false'
 
 " Emmet
 map <leader>e <C-Y>,
