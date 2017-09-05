@@ -53,9 +53,11 @@ let g:NERDTreeIgnore = ['node_modules', 'dist', '.git']
 let g:NERDTreeShowHidden=1
 
 " Prettier
+let g:prettier#exec_cmd_async = 1
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#semi = 'false'
+let g:prettier#config#parser = 'babylon'
 
 " Emmet
 map <leader>e <C-Y>,
