@@ -74,7 +74,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
-\  'javascript': ['flow']
+\  'javascript': ['flow'],
 \}
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
@@ -87,3 +87,14 @@ let g:ale_echo_msg_format = '%linter%: %s'
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
+
+" insert jira ticket in buffer
+nnoremap <leader>gb :call GetJiraTicketFromBranch()<CR>
+function! GetJiraTicketFromBranch()
+  let cmd = "git rev-parse --abbrev-ref HEAD"
+  let git_output = system(cmd)
+  let branch_name = substitute(git_output, '[\]\|[[:cntrl:]]', '', 'g')
+  let ticket_number = matchstr(branch_name, '\([A-Z]*-[0-9]*\)$')
+  " Append space + result to current line without moving cursor.
+  call setline(line('.'), getline('.') . ' ' . ticket_number)
+endfunction
