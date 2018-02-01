@@ -2,6 +2,10 @@ colorscheme solarized
 set background=dark
 set gfn=Operator\ Mono\ SSm\ Book:h24
 
+" Auto updating and writing files
+set autoread
+set autowrite
+
 " Directional keys operate on display lines
 nnoremap k gk
 nnoremap gk k
@@ -20,8 +24,13 @@ set cursorline
 vnoremap < <gv
 vnoremap > >gv
 
+" Shorcuts
 " leader ; adds a semi-colon to the end of a line
 map <leader>; A;<Esc>
+" leader x runs :x with an enter
+map <leader>x :x<cr>
+" leader m runs :w with an escape
+map <leader>m :w<Esc>
 
 " Trim whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -30,7 +39,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 au FocusGained,BufEnter * :silent! !
 
 " Save buffer on focus lost
-au FocusLost,WinLeave * :silent! w
+" au FocusLost,WinLeave * :silent! w
 
 " Move to next/previous tabs
 nnoremap [w :tabp<cr>
@@ -56,7 +65,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
 
 " NerdTree
 let g:NERDTreeIgnore = ['node_modules', 'dist', '.git']
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
 
 " Prettier
 let g:prettier#exec_cmd_async = 1
@@ -68,10 +77,6 @@ let g:prettier#config#parser = 'babylon'
 " Emmet
 map <leader>e <C-Y>,
 imap <C-E> <C-Y>,
-
-" vim-expand-region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 " YouCompleteMe
 " close preview window
