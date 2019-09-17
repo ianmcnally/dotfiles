@@ -29,27 +29,28 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rake heroku python node scala history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(vi-mode git node history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/.yarn:$PATH
 
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
+alias gb="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
 alias gd="git diff"
 alias gs="git status"
-alias gl="git log"
 alias gc="git commit -v"
 alias gca="gc -a"
 alias gco="git checkout"
 alias gf="git fetch"
-alias grm="git fetch; git rebase origin/master"
+alias grm="git fetch origin master; git rebase origin/master"
+alias grim="grm -i"
 alias gri="git rebase -i"
 alias gp="git push"
 alias gpf="git push --force-with-lease --no-verify"
-alias gpr="git pull --rebase"
+alias gpr="git pull --rebase origin head"
 alias gpuh="git push -u origin head"
 alias gap="git add -p"
 alias gad="git add ."
