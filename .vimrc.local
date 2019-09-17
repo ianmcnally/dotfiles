@@ -38,9 +38,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Reload buffer on focus
 au FocusGained,BufEnter * :silent! !
 
-" Save buffer on focus lost
-" au FocusLost,WinLeave * :silent! w
-
 " Move to next/previous tabs
 nnoremap [w :tabp<cr>
 nnoremap ]w :tabn<cr>
@@ -61,11 +58,18 @@ let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
 " Ctrl-P
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS'
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|\.git\|PhantomJS|data_loaders|Technical_Reports|.pants.d'
 
 " NerdTree
-let g:NERDTreeIgnore = ['node_modules', 'dist', '.git']
+let g:NERDTreeIgnore = ['node_modules', 'dist', '.git', 'data_loaders', 'Technical_Reports', '.pants.d']
 let g:NERDTreeShowHidden = 1
+
+" FZF
+nnoremap <leader>f :GFiles<cr>
+
+"Ag
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>g :Buff<cr>
 
 " Prettier
 let g:prettier#exec_cmd_async = 1
@@ -85,7 +89,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
-\  'javascript': ['flow'],
+\  'javascript': ['eslint', 'flow'],
 \}
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
@@ -99,13 +103,3 @@ let g:ale_echo_msg_format = '%linter%: %s'
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
 
-" insert jira ticket in buffer
-nnoremap <leader>gb :call GetJiraTicketFromBranch()<CR>
-function! GetJiraTicketFromBranch()
-  let cmd = "git rev-parse --abbrev-ref HEAD"
-  let git_output = system(cmd)
-  let branch_name = substitute(git_output, '[\]\|[[:cntrl:]]', '', 'g')
-  let ticket_number = matchstr(branch_name, '\([A-Z]*-[0-9]*\)$')
-  " Append space + result to current line without moving cursor.
-  call setline(line('.'), getline('.') . ' ' . ticket_number)
-endfunction
