@@ -31,6 +31,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(vi-mode git node history-substring-search)
 
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -59,11 +62,9 @@ alias gl="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Cre
 alias fux="yarn lint:fix"
 
 # pure
+fpath+=('/Users/imcnally/.nvm/versions/node/v12.12.0/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit; promptinit
 prompt pure
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='
@@ -74,10 +75,10 @@ export FZF_DEFAULT_OPTS='
 export EDITOR=/usr/bin/vim
 
 # work
-source ~/.bash_profile
+# source ~/.bash_profile
 
 export OSCAR_PROFILE_PATH=~/.oscar_exports
-source $OSCAR_PROFILE_PATH
+# source $OSCAR_PROFILE_PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
