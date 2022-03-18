@@ -51,6 +51,9 @@ vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
+" copy path with <leader>cp
+nmap ,cp :let @*=expand("%:p")<CR>
+
 " vim-javascript
 let g:javascript_plugin_flow = 1
 
@@ -66,6 +69,9 @@ let g:NERDTreeShowHidden = 1
 
 " FZF
 nnoremap <leader>f :GFiles<cr>
+
+" vim-test
+let g:test#javascript#runner = 'jest'
 
 "Ag
 nnoremap <leader>a :Ag<space>
@@ -88,9 +94,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
-let g:ale_linters = {
-\  'javascript': ['eslint', 'flow'],
-\}
+" let g:ale_linters = {
+" \  'javascript': ['eslint', 'flow'],
+" \}
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
 let g:ale_sign_error = '🚫' " could use emoji
@@ -103,3 +109,66 @@ let g:ale_echo_msg_format = '%linter%: %s'
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
 
+" airline
+let g:airline_section_b = ''
+let g:airline_section_y = ''
+
+" fzf
+set rtp+=/usr/local/opt/fzf
+" let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+let $FZF_DEFAULT_OPTS='--bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down'
+
+" function! FloatingFZF()
+  " let buf = nvim_create_buf(v:false, v:true)
+  " call setbufvar(buf, '&signcolumn', 'no')
+
+  " let height = float2nr(10)
+  " let width = float2nr(80)
+  " let horizontal = float2nr((&columns - width) / 2)
+  " let vertical = 1
+
+  " let opts = {
+        " \ 'relative': 'editor',
+        " \ 'row': vertical,
+        " \ 'col': horizontal,
+        " \ 'width': width,
+        " \ 'height': height,
+        " \ 'style': 'minimal'
+        " \ }
+
+  " call nvim_open_win(buf, v:true, opts)
+" endfunction
+
+" Some annoying vim-go (?) terminal warning
+let g:go_version_warning = 0
+
+" coc.vim
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+let g:coc_node_path = '/usr/local/bin/node'
+
+" neovim
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+set backupdir=~/.config/nvim/tmp/backup
+
+" vim-autopep8
+let g:autopep8_disable_show_diff=1
+
+" formatting on save
+autocmd BufWritePost *.py :Autopep8
+autocmd BufWritePost *.js :PrettierAsync
+autocmd BufWritePost *.jsx :PrettierAsync
+autocmd BufWritePost *.ts :PrettierAsync
+autocmd BufWritePost *.tsx :PrettierAsync
+autocmd BufWritePost *.scss :PrettierAsync
+autocmd BufWritePost *.css :PrettierAsync
+autocmd BufWritePost *.html :PrettierAsync

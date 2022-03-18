@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ian"
+# ZSH_THEME="ian"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git node history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(vi-mode git node history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,12 +50,36 @@ alias grim="grm -i"
 alias gri="git rebase -i"
 alias gp="git push"
 alias gpf="git push --force-with-lease --no-verify"
-alias gpr="git pull --rebase origin head"
+alias gpr="git rev-parse --abbrev-ref HEAD | xargs git pull --rebase origin"
 alias gpuh="git push -u origin head"
+alias gdh="git rev-parse --abbrev-ref HEAD | xargs git push origin --delete"
 alias gap="git add -p"
 alias gad="git add ."
 alias gl="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --decorate --graph"
 alias fux="yarn lint:fix"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# pure
+autoload -U promptinit; promptinit
+prompt pure
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='
+  --color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254
+  --color info:254,prompt:37,spinner:108,pointer:235,marker:235
+'
+
+export EDITOR=/usr/bin/vim
+
+# work
+source ~/.bash_profile
+
+export OSCAR_PROFILE_PATH=~/.oscar_exports
+source $OSCAR_PROFILE_PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"
