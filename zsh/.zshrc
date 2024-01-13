@@ -49,20 +49,12 @@ alias gca="gc -a"
 alias gco="git checkout"
 alias gf="git fetch"
 alias grm="git fetch origin master; git rebase origin/master"
-alias grim="grm -i"
 alias gri="git rebase -i"
-alias gp="git push"
 alias gpf="git push --force-with-lease --no-verify"
 alias gpr="git rev-parse --abbrev-ref HEAD | xargs git pull --rebase origin"
-alias gpuh="git push -u origin head"
-alias gdh="git rev-parse --abbrev-ref HEAD | xargs git push origin --delete"
-alias gap="git add -p"
 alias gad="git add ."
 alias gl="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --decorate --graph"
-alias fux="yarn lint:fix"
 
-# pure
-fpath+=('/Users/imcnally/.nvm/versions/node/v12.12.0/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -74,11 +66,6 @@ export FZF_DEFAULT_OPTS='
 
 export EDITOR=/usr/bin/vim
 
-# work
-# source ~/.bash_profile
-
-export OSCAR_PROFILE_PATH=~/.oscar_exports
-# source $OSCAR_PROFILE_PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
