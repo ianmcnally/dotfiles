@@ -1,0 +1,7 @@
+# Add these to the machine's ~/.gitconfig
+[push]
+	autoSetupRemote = true
+[rebase]
+	updateRefs = true
+[rerere]
+	enabled = true
